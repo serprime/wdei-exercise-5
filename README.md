@@ -3,23 +3,24 @@ wdei-exercise-5
 
 WebDataExtraction- Exercise 5 - String and Tree Similarity
 
+Both applications have a jUnit test that can be used to develop by example.
 
 String similarity
 ---------------
 Project in folder string-similarity.
 
 ### Todo:
-- start from command line
+- Add main() to start from command line with strings as parameters
 
 
 Tree similarity
 -------------
 Project in folder tree-similarity.
-Run with ... todo
-To develop, use the jUnit test in tree-similarity/src/test/java/wdei/b1/TreeSimilarityTest.java
+
+Currently it is just the default STM from the slides.
 
 ### Todo:
-- start code from command line
-- read 2 trees from files
+- Add main() to start from command line with file names as parameters to read the html trees
+- Add additional heuristic/metric
 
 

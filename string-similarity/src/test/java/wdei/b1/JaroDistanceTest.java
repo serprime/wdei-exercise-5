@@ -31,6 +31,8 @@ public class JaroDistanceTest {
                 new JaroDistance().calculate("DIXON", "DICKSONX"))));
         Assert.assertTrue("0.767".equals(String.format("%.3f",
                 new JaroDistance().calculate("DICKSONX", "DIXON"))));
+
+        new JaroDistance().calculate("Gamsbart", "Gaumsboat");
     }
 
 
