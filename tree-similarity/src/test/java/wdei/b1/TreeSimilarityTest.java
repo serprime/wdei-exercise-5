@@ -23,7 +23,7 @@ public class TreeSimilarityTest {
         Document leftDoc = Jsoup.parse(left);
         Document rightDoc = Jsoup.parse(right);
 
-        System.out.println("tree distance: " + new TreeSimilarity().calculate(leftDoc, rightDoc));
+        System.out.println("node matches: " + new TreeSimilarity().calculate(leftDoc, rightDoc));
 
     }
 

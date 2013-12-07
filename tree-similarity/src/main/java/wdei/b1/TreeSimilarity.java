@@ -25,23 +25,25 @@ public class TreeSimilarity {
             return 0;
         }
 
-        int rightChildrenSize = rightRoot.childNodeSize();
-        int leftChildrenSize = leftRoot.childNodeSize();
-        int[][] M = new int[leftChildrenSize][rightChildrenSize];
 
-        Element[] leftElements = getChildren(leftRoot);
-        Element[] rightElements = getChildren(rightRoot);
+        Element[] leftChildren = getChildren(leftRoot);
+        Element[] rightChildren = getChildren(rightRoot);
+        int[][] M = new int[leftChildren.length + 1][rightChildren.length + 1];
 
-        for (int i = 1; i < leftChildrenSize; i++) {
-            for (int j = 1; j < rightChildrenSize; j++) {
+        for (int i = 1; i <= leftChildren.length; i++) {
+            for (int j = 1; j <= rightChildren.length; j++) {
+                int a = M[i][j - 1];
+                int b = M[i - 1][j];
+                int c = M[i - 1][j - 1];
+                int z = stm(leftChildren[i-1], rightChildren[j-1]);
                 M[i][j] = max(
-                        M[i][j - 1],
-                        M[i - 1][j],
-                        M[i - 1][j - 1] + stm(leftElements[i], rightElements[j])
+                        a,
+                        b,
+                        c + z
                 );
             }
         }
-        return M[leftChildrenSize-1][rightChildrenSize-1] + 1;
+        return M[leftChildren.length][rightChildren.length] + 1;
     }
 
     private int max(int... vals) {
@@ -56,7 +58,7 @@ public class TreeSimilarity {
 
     // convert Elements to an array
     private Element[] getChildren(Element element) {
-        Element[] children = new Element[element.childNodeSize()];
+        Element[] children = new Element[element.children().size()];
         int i = 0;
         for (Element child : element.children()) {
             children[i] = child;
