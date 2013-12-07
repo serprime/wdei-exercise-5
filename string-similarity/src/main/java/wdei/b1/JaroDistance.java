@@ -1,5 +1,8 @@
 package wdei.b1;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created with IntelliJ IDEA.
  * User: serprime
@@ -10,9 +13,6 @@ package wdei.b1;
 public class JaroDistance {
 
     public double calculate(String left, String right) {
-
-        // prepare matrix of matching characters
-        //printMatchingMatrix(left, right);
 
         Vars vars = calculateVars(left, right);
         double m = vars.matches;
@@ -35,35 +35,52 @@ public class JaroDistance {
         int totalMatches = 0;
         int totalTranspositions = 0;
         int matchingRadius = max(left.length(), right.length()) / 2 - 1;
+
+
+        // --
+        boolean[] leftMatches = new boolean[left.length()];
+        Arrays.fill(leftMatches, false);
+        boolean[] rightMatches = new boolean[right.length()];
+        Arrays.fill(rightMatches, false);
+        // --
+
         // check for each character in left if it matches a character inside the radius of right
         for (int l = 0; l < left.length(); l++) {
             int start = max(0, l - matchingRadius);
             int end = min(l + matchingRadius, right.length() - 1);
             // matches
             for (int r = start; r <= end; r++) {
+                // we need to skip already matched chars
+                if (rightMatches[r]) {
+                    continue;
+                }
                 if (left.charAt(l) == right.charAt(r)) {
                     totalMatches++;
+                    leftMatches[l] = true;
+                    rightMatches[r] = true;
                     // we have to break if we find the first match,
                     // else we count one character
                     // multiple times and can get a distance greater 1
                     break;
                 }
             }
-            // transpositions
-            if (left.charAt(l) == right.charAt(l)) {
+        }
+        // calculate transpositions
+        int halfTranspositions = 0;
+        int r = 0;
+        for (int l = 0; l < leftMatches.length; l++) {
+            if (!leftMatches[l]) {
                 continue;
             }
-            for (int r = start; r <= end; r++) {
-                if (left.charAt(l) == right.charAt(r)) {
-                    if (l != r) {
-                        totalTranspositions++;
-                        // here we have to break to only count 1 transposition per character.
-                        break;
-                    }
-                }
+            while (!rightMatches[r]) {
+                r++;
             }
+            if (left.charAt(l) != right.charAt(r)) {
+                halfTranspositions++;
+            }
+            r++;
         }
-        return new Vars(totalMatches, totalTranspositions);
+        return new Vars(totalMatches, halfTranspositions/2);
     }
 
     public class Vars {
@@ -84,7 +101,6 @@ public class JaroDistance {
         }
     }
 
-
     private int max(int left, int right) {
         return left > right ? left : right;
     }
@@ -93,22 +109,4 @@ public class JaroDistance {
         return left < right ? left : right;
     }
 
-    private void printMatchingMatrix(String left, String right) {
-        boolean[][] matches = new boolean[left.length()][right.length()];
-        for (int l = 0; l < left.length(); l++) {
-            for (int r = 0; r < right.length(); r++) {
-                matches[l][r] = left.charAt(l) == right.charAt(r);
-            }
-        }
-        System.out.println("  " + right);
-        int row = 0;
-        for (boolean[] match : matches) {
-            System.out.print(left.charAt(row) + " ");
-            for (boolean b : match) {
-                System.out.print(b ? 1 : 0);
-            }
-            row++;
-            System.out.println("");
-        }
-    }
 }
