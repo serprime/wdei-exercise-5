@@ -95,7 +95,7 @@ public class Main {
 
         //write to file
         try {
-            FileOutputStream out = new FileOutputStream(new File("spreadsheet.xlsx"));
+            FileOutputStream out = new FileOutputStream(new File("result/spreadsheet.xlsx"));
             workbook.write(out);
             out.close();
             System.out.println("Spreadsheet successfully created.");
