@@ -8,6 +8,13 @@
     <artifactId>string-similarity</artifactId>
     <version>0.1</version>
 
+    <repositories>
+        <repository>
+            <id>simmetrics-repo</id>
+            <url>https://github.com/nickmancol/simmetrics/tree/master/mavenRepo/releases</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -45,6 +52,11 @@
             <artifactId>commons-io</artifactId>
             <version>2.4</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.simmetrics</groupId>-->
+            <!--<artifactId>simmetrics</artifactId>-->
+            <!--<version>1.6.3</version>-->
+        <!--</dependency>-->
     </dependencies>
 
     <build>
