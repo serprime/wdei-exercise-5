@@ -9,8 +9,11 @@ String similarity
 ---------------
 Project in folder string-similarity.
 
-### Todo:
-- Add main() to start from command line with strings as parameters
+### 
+- added reading strings from a file (30 strings)
+- added calculation of Levenshtein distance in addition to Jaro
+- added calculation of precision and recall (for both algorithms and for both thresholds)
+- added writing all the data to a spreadsheet
 
 
 Tree similarity
