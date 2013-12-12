@@ -9,6 +9,12 @@ String similarity
 ---------------
 Project in folder string-similarity.
 
+build:
+/string-similarity/$> mvn package
+
+execute with:
+/string-similarity/$> mvn exec:java
+
 ### 
 - added reading strings from a file (30 strings)
 - added calculation of Levenshtein distance in addition to Jaro
