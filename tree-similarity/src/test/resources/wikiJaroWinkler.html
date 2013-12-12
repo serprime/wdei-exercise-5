@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+    <meta charset="UTF-8" /><title>Jaro–Winkler distance - Wikipedia, the free encyclopedia</title>
+    <meta name="generator" content="MediaWiki 1.23wmf5" />
+    <link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;action=edit" />
+    <link rel="edit" title="Edit this page" href="/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;action=edit" />
+    <link rel="apple-touch-icon" href="//bits.wikimedia.org/apple-touch/wikipedia.png" />
+    <link rel="shortcut icon" href="//bits.wikimedia.org/favicon/wikipedia.ico" />
+    <link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+    <link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd" />
+    <link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
+    <link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+    <link rel="canonical" href="http://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance" />
+    <link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cteahouse%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cext.wikihiero%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmw.PopUpMediaTransform%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+    <meta name="ResourceLoaderDynamicStyles" content="" />
+    <link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+    <style>a:lang(ar),a:lang(ckb),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+        /* cache key: enwiki:resourceloader:filter:minify-css:7:0de201fdea5d684523607ed88007b127 */</style>
+
+    <script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+    <script>if(window.mw){
+        mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Jaro–Winkler_distance","wgTitle":"Jaro–Winkler distance","wgCurRevisionId":584590662,"wgRevisionId":584590662,"wgArticleId":6782835,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles that may contain original research from May 2013","All articles that may contain original research","Articles with topics of unclear notability from May 2013","All articles with topics of unclear notability","All articles with unsourced statements","Articles with unsourced statements from January 2011","Wikipedia articles needing clarification from March 2013","String similarity measures"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Jaro–Winkler_distance","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false},"wgArticleFeedbackv5Permissions":{"aft-reader":true,"aft-member":false,"aft-editor":false,"aft-monitor":false,"aft-administrator":false,"aft-oversighter":false,"aft-noone":false},"wgBetaFeaturesFeatures":[],"wgVisualEditor":{"isPageWatched":false,"magnifyClipIconURL":"//bits.wikimedia.org/static-1.23wmf5/skins/common/images/magnify-clip.png","pageLanguageCode":"en","pageLanguageDir":"ltr"},"wikilove-recipient":"","wikilove-anon":0,"wgGuidedTourHelpGuiderUrl":"Help:Guided tours/guider","wgULSAcceptLanguageList":["en-us"],"wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","Geo":{"city":"","country":""},"wgNoticeProject":"wikipedia","aftv5Article":{"id":6782835,"title":"Jaro–Winkler distance","namespace":0,"categories":["All articles that may contain original research","All articles with topics of unclear notability","All articles with unsourced statements","Articles that may contain original research from May 2013","Articles with topics of unclear notability from May 2013","Articles with unsourced statements from January 2011","String similarity measures","Wikipedia articles needing clarification from March 2013"],"permissionLevel":false},"wgWikibaseItemId":"Q3030677"});
+    }</script><script>if(window.mw){
+    mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":false,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"vector-simplesearch":1,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots"
+            :0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"flaggedrevssimpleui":1,"flaggedrevsstable":0,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"aftv5-last-filter":null,"visualeditor-enable":0,"visualeditor-enable-experimental":0,"visualeditor-enable-mwmath":0,"visualeditor-betatempdisable":0,"wikilove-enabled":1,"echo-subscriptions-web-page-review":true,"echo-subscriptions-email-page-review":false,"ep_showtoplink":false,"ep_bulkdelorgs":false,"ep_bulkdelcourses":true,"ep_showdyk":true,"echo-notify-show-link":true,"echo-show-alert":true,"echo-email-frequency":0,"echo-email-format":"html","echo-subscriptions-email-system":true,"echo-subscriptions-web-system":true,"echo-subscriptions-email-other":false,"echo-subscriptions-web-other":true,"echo-subscriptions-email-edit-user-talk":false,"echo-subscriptions-web-edit-user-talk":true,
+        "echo-subscriptions-email-reverted":false,"echo-subscriptions-web-reverted":true,"echo-subscriptions-email-article-linked":false,"echo-subscriptions-web-article-linked":false,"echo-subscriptions-email-mention":false,"echo-subscriptions-web-mention":true,"echo-subscriptions-web-edit-thank":true,"echo-subscriptions-email-edit-thank":false,"gettingstarted-task-toolbar-show-intro":true,"uls-preferences":"","language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs108":false,"searchNs109":false,"searchNs446":false,"searchNs447":false
+        ,"searchNs710":false,"searchNs711":false,"searchNs828":false,"searchNs829":false,"gadget-teahouse":1,"gadget-ReferenceTooltips":1,"gadget-DRN-wizard":1,"gadget-charinsert":1,"gadget-mySandbox":1,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+    /* cache key: enwiki:resourceloader:filter:minify-js:7:664b3f39123c8f67ad841d996d382105 */
+}</script>
+    <script>if(window.mw){
+        mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","ext.visualEditor.viewPageTarget.init","ext.wikimediaShopLink.core","ext.uls.init","ext.uls.interface","wikibase.client.init","ext.centralNotice.bannerController","skins.vector.js"]);
+    }</script>
+    <script src="//bits.wikimedia.org/geoiplookup"></script><link rel="dns-prefetch" href="//meta.wikimedia.org" /><!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.23wmf5/skins/vector/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Jaro–Winkler_distance skin-vector action-view vector-animateLayout">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+<a id="top"></a>
+<div id="mw-js-message" style="display:none;"></div>
+<div id="siteNotice"><!-- CentralNotice --></div>
+<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Jaro–Winkler distance</span></h1>
+<div id="bodyContent">
+<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+<div id="contentSub"></div>
+<div id="jump-to-nav" class="mw-jump">
+    Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+</div>
+<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="dablink">This article is about the measure.  For other uses, see <a href="/wiki/Jaro_(disambiguation)" title="Jaro (disambiguation)" class="mw-redirect">Jaro</a>.</div>
+<table class="metadata plainlinks ambox ambox-content ambox-Original_research" role="presentation">
+    <tr>
+        <td class="mbox-image">
+            <div style="width:52px;"><img alt="" src="//upload.wikimedia.org/wikipedia/en/f/f4/Ambox_content.png" width="40" height="40" /></div>
+        </td>
+        <td class="mbox-text"><span class="mbox-text-span">This article <b>possibly contains <a href="/wiki/Wikipedia:No_original_research" title="Wikipedia:No original research">original research</a></b>. <span class="hide-when-compact">Please <a class="external text" href="//en.wikipedia.org/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;action=edit">improve it</a> by <a href="/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">verifying</a> the claims made and adding <a href="/wiki/Wikipedia:Citing_sources#Inline_citations" title="Wikipedia:Citing sources">inline citations</a>. Statements consisting only of original research may be removed.</span> <small><i>(May 2013)</i></small></span></td>
+    </tr>
+</table>
+<table class="metadata plainlinks ambox ambox-content ambox-Notability" role="presentation">
+    <tr>
+        <td class="mbox-image">
+            <div style="width:52px;"><img alt="" src="//upload.wikimedia.org/wikipedia/en/f/f4/Ambox_content.png" width="40" height="40" /></div>
+        </td>
+        <td class="mbox-text"><span class="mbox-text-span">The topic of this article <b>may not meet Wikipedia's <a href="/wiki/Wikipedia:Notability" title="Wikipedia:Notability">general notability guideline</a></b>. <span class="hide-when-compact">Please help to establish notability by adding <a href="/wiki/Wikipedia:Identifying_reliable_sources" title="Wikipedia:Identifying reliable sources">reliable, secondary sources</a> about the topic. If notability cannot be established, the article is likely to be <a href="/wiki/Wikipedia:Merge" title="Wikipedia:Merge" class="mw-redirect">merged</a>, <a href="/wiki/Wikipedia:Redirect" title="Wikipedia:Redirect">redirected</a>, or <a href="/wiki/Wikipedia:Deletion_policy" title="Wikipedia:Deletion policy">deleted</a>.<br />
+<small><span class="plainlinks" style=""><i>Find sources:</i>&#160;<a rel="nofollow" class="external text" href="http://www.google.com/search?as_eq=wikipedia&amp;q=%22Jaro%E2%80%93Winkler+distance%22&amp;num=50">"Jaro–Winkler distance"</a>&#160;–&#160;<a rel="nofollow" class="external text" href="http://www.google.com/search?q=%22Jaro%E2%80%93Winkler+distance%22&amp;tbm=nws&amp;tbs=ar:1">news</a>&#160;<b>·</b> <a rel="nofollow" class="external text" href="http://www.google.com/search?tbs=bks:1&amp;q=%22Jaro%E2%80%93Winkler+distance%22">books</a>&#160;<b>·</b> <a rel="nofollow" class="external text" href="http://scholar.google.com/scholar?q=%22Jaro%E2%80%93Winkler+distance%22">scholar</a>&#160;<b>·</b> <a rel="nofollow" class="external text" href="http://www.jstor.org/action/doBasicSearch?Query=%22Jaro%E2%80%93Winkler+distance%22&amp;acc=on&amp;wc=on">JSTOR</a>&#160;<b>·</b> <a rel="nofollow" class="external text" href="http://images.google.com/images?safe=off&amp;as_rights=(cc_publicdomain%7ccc_attribute%7ccc_sharealike%7ccc_noncommercial%7ccc_nonderived)&amp;q=%22Jaro%E2%80%93Winkler+distance%22">free images</a></span></small></span> <small><i>(May 2013)</i></small></span></td>
+    </tr>
+</table>
+<p>In <a href="/wiki/Computer_science" title="Computer science">computer science</a> and <a href="/wiki/Statistics" title="Statistics">statistics</a>, the <b>Jaro–Winkler distance</b> (Winkler, 1990) is a measure of similarity between two <a href="/wiki/String_(computer_science)" title="String (computer science)">strings</a>. It is a variant of the <b>Jaro distance</b> metric (Jaro, 1989, 1995) and mainly<sup class="Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (January 2011)">citation needed</span></a></i>]</sup> used in the area of <a href="/wiki/Record_linkage" title="Record linkage">record linkage</a> (duplicate detection). The higher the Jaro–Winkler distance for two strings is, the more similar the strings are. The Jaro–Winkler distance metric is designed and best suited for short strings such as person names. The score is normalized such that 0 equates to no similarity and 1 is an exact match.</p>
+<p></p>
+<div id="toc" class="toc">
+    <div id="toctitle">
+        <h2>Contents</h2>
+    </div>
+    <ul>
+        <li class="toclevel-1 tocsection-1"><a href="#Definition"><span class="tocnumber">1</span> <span class="toctext">Definition</span></a></li>
+        <li class="toclevel-1 tocsection-2"><a href="#Example"><span class="tocnumber">2</span> <span class="toctext">Example</span></a></li>
+        <li class="toclevel-1 tocsection-3"><a href="#See_also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+        <li class="toclevel-1 tocsection-4"><a href="#References"><span class="tocnumber">4</span> <span class="toctext">References</span></a></li>
+        <li class="toclevel-1 tocsection-5"><a href="#External_links"><span class="tocnumber">5</span> <span class="toctext">External links</span></a></li>
+    </ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Definition">Definition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;action=edit&amp;section=1" title="Edit section: Definition">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The Jaro distance <img class="tex" alt="d_j" src="//upload.wikimedia.org/math/1/8/d/18dcc10831be4494a9c0fcda3f7bec40.png" /> of two given strings <img class="tex" alt="s_1" src="//upload.wikimedia.org/math/0/3/2/032e388e2ab0ba83dd40c91e1f8d9c2f.png" /> and <img class="tex" alt="s_2" src="//upload.wikimedia.org/math/3/3/6/336ac411515fbb2b61ec71e6bf2fba27.png" /> is</p>
+<dl>
+    <dd><img class="tex" alt="d_j = \left\{
+
+\begin{array}{l l}
+  0 &amp; \text{if }m = 0\\
+  \frac{1}{3}\left(\frac{m}{|s_1|} + \frac{m}{|s_2|} + \frac{m-t}{m}\right) &amp; \text{otherwise} \end{array} \right." src="//upload.wikimedia.org/math/3/6/d/36dfc04e4a018105b539e715e6d9d110.png" /></dd>
+</dl>
+<p>where:</p>
+<ul>
+    <li><img class="tex" alt="m" src="//upload.wikimedia.org/math/6/f/8/6f8f57715090da2632453988d9a1501b.png" /> is the number of <i>matching characters</i> (see below);</li>
+    <li><img class="tex" alt="t" src="//upload.wikimedia.org/math/e/3/5/e358efa489f58062f10dd7316b65649e.png" /> is half the number of <i>transpositions</i> (see below).</li>
+</ul>
+<p>Two characters from <img class="tex" alt="s_1" src="//upload.wikimedia.org/math/0/3/2/032e388e2ab0ba83dd40c91e1f8d9c2f.png" /> and <img class="tex" alt="s_2" src="//upload.wikimedia.org/math/3/3/6/336ac411515fbb2b61ec71e6bf2fba27.png" /> respectively, are considered <i>matching</i> only if they are the same and not farther than <img class="tex" alt="\left\lfloor\frac{\max(|s_1|,|s_2|)}{2}\right\rfloor-1" src="//upload.wikimedia.org/math/1/1/a/11a608a5dcba784ce5cc9689b8620cd0.png" />.</p>
+<p>Each character of <img class="tex" alt="s_1" src="//upload.wikimedia.org/math/0/3/2/032e388e2ab0ba83dd40c91e1f8d9c2f.png" /> is compared with all its matching characters in <img class="tex" alt="s_2" src="//upload.wikimedia.org/math/3/3/6/336ac411515fbb2b61ec71e6bf2fba27.png" />. The number of matching (but different sequence order) characters divided by 2 defines the number of <i>transpositions</i>. For example, in comparing CRATE with TRACE, only 'R' 'A' 'E' are the matching characters, i.e. m=3. Although 'C', 'T' appear in both strings, they are farther than 1, i.e., floor(5/2)-1=1. Therefore, t=0 . In DwAyNE versus DuANE the matching letters are already in the same order D-A-N-E, so no transpositions are needed.</p>
+<p>Jaro–Winkler distance uses a <a href="/wiki/Prefix" title="Prefix">prefix</a> scale <img class="tex" alt="p" src="//upload.wikimedia.org/math/8/3/8/83878c91171338902e0fe0fb97a8c47a.png" /> which gives more favourable ratings to strings that match from the beginning for a set prefix length <img class="tex" alt="\ell" src="//upload.wikimedia.org/math/3/3/4/334ce9eb79df1178b0380461c9eaa09e.png" />. Given two strings <img class="tex" alt="s_1" src="//upload.wikimedia.org/math/0/3/2/032e388e2ab0ba83dd40c91e1f8d9c2f.png" /> and <img class="tex" alt="s_2" src="//upload.wikimedia.org/math/3/3/6/336ac411515fbb2b61ec71e6bf2fba27.png" />, their Jaro–Winkler distance <img class="tex" alt="d_w" src="//upload.wikimedia.org/math/8/f/3/8f30e60ec656c9c4e564cb5ea6d30b78.png" /> is:</p>
+<dl>
+    <dd><img class="tex" alt="d_w = d_j + (\ell p (1 - d_j))" src="//upload.wikimedia.org/math/c/0/f/c0f1ae8bb4eeb6282162a8a16699383b.png" /></dd>
+</dl>
+<p>where:</p>
+<ul>
+    <li><img class="tex" alt="d_j" src="//upload.wikimedia.org/math/1/8/d/18dcc10831be4494a9c0fcda3f7bec40.png" /> is the Jaro distance for strings <img class="tex" alt="s_1" src="//upload.wikimedia.org/math/0/3/2/032e388e2ab0ba83dd40c91e1f8d9c2f.png" /> and <img class="tex" alt="s_2" src="//upload.wikimedia.org/math/3/3/6/336ac411515fbb2b61ec71e6bf2fba27.png" /></li>
+    <li><img class="tex" alt="\ell" src="//upload.wikimedia.org/math/3/3/4/334ce9eb79df1178b0380461c9eaa09e.png" /> is the length of common prefix at the start of the string up to a maximum of 4 characters</li>
+    <li><img class="tex" alt="p" src="//upload.wikimedia.org/math/8/3/8/83878c91171338902e0fe0fb97a8c47a.png" /> is a constant <a href="/w/index.php?title=Scaling_factor&amp;action=edit&amp;redlink=1" class="new" title="Scaling factor (page does not exist)">scaling factor</a> for how much the score is adjusted upwards for having common prefixes. <img class="tex" alt="p" src="//upload.wikimedia.org/math/8/3/8/83878c91171338902e0fe0fb97a8c47a.png" /> should not exceed 0.25, otherwise the distance can become larger than 1. The standard value for this constant in Winkler's work is <img class="tex" alt="p = 0.1" src="//upload.wikimedia.org/math/9/a/2/9a2620753f6201fd359ad1143f8bd7dc.png" /></li>
+</ul>
+<p>Although often referred to as a <i>distance metric</i>, the Jaro–Winkler distance is actually not a <a href="/wiki/Metric_(mathematics)" title="Metric (mathematics)">metric</a> in the mathematical sense of that term because it does not obey the <a href="/wiki/Triangle_inequality" title="Triangle inequality">triangle inequality</a> <a rel="nofollow" class="external autonumber" href="http://richardminerich.com/tag/jaro-winkler/">[1]</a>.</p>
+<p>In some implementations of Jaro-Winkler, the prefix bonus <img class="tex" alt="\ell p (1 - d_j)" src="//upload.wikimedia.org/math/0/a/1/0a164c29bff7b88457af1a386fb3e3ea.png" /> is only added when the compared strings have a Jaro distance above a set "boost threshold" <img class="tex" alt="b_t" src="//upload.wikimedia.org/math/5/6/8/56843265e26cda576f4059860de02abd.png" />. The boost threshold in Winkler's implementation was 0.7.</p>
+<dl>
+    <dd><img class="tex" alt="d_w = \left\{
+
+\begin{array}{l l}
+  d_j &amp; \text{if }d_j &lt; b_t\\
+  d_j + (\ell p (1 - d_j)) &amp; \text{otherwise} \end{array} \right." src="//upload.wikimedia.org/math/9/0/5/9053aa542e95783d1801e0680eae046d.png" /></dd>
+</dl>
+<h2><span class="mw-headline" id="Example">Example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;action=edit&amp;section=2" title="Edit section: Example">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p><i>Note that Winkler's "reference" C code differs in at least two ways from published accounts of the Jaro–Winkler metric. First is his use of a typo table (adjwt) and also some optional additional tolerance for long strings.</i></p>
+<p>Given the strings <img class="tex" alt="s_1" src="//upload.wikimedia.org/math/0/3/2/032e388e2ab0ba83dd40c91e1f8d9c2f.png" /> <i>MARTHA</i> and <img class="tex" alt="s_2 " src="//upload.wikimedia.org/math/3/3/6/336ac411515fbb2b61ec71e6bf2fba27.png" /> <i>MARHTA</i> we find:</p>
+<ul>
+    <li><img class="tex" alt="m = 6" src="//upload.wikimedia.org/math/f/7/1/f711d4255917d40a68d272b8464223cc.png" /></li>
+    <li><img class="tex" alt="|s_1| = 6" src="//upload.wikimedia.org/math/8/7/b/87bf60b9b8b205e51761cab991ad5b4f.png" /></li>
+    <li><img class="tex" alt="|s_2| = 6" src="//upload.wikimedia.org/math/6/8/9/68956ec730dfa237f6256de33cf4fb99.png" /></li>
+    <li>There are mismatched characters T/H and H/T leading to <img class="tex" alt="t = \frac{2}{2} = 1" src="//upload.wikimedia.org/math/0/d/9/0d919cb80ee381d69a611c5d55dd1055.png" /></li>
+</ul>
+<p>We find a Jaro score of:</p>
+<p><img class="tex" alt="d_j = \frac{1}{3}\left(\frac{6}{6} + \frac{6}{6} + \frac{6-1}{6}\right) = 0.944" src="//upload.wikimedia.org/math/7/5/1/751d5b31803a79f32c48756487cea5b2.png" /></p>
+<p>To find the Jaro–Winkler score using the standard weight <img class="tex" alt="p = 0.1" src="//upload.wikimedia.org/math/9/a/2/9a2620753f6201fd359ad1143f8bd7dc.png" />, we continue to find:</p>
+<ul>
+    <li><img class="tex" alt="\ell = 3" src="//upload.wikimedia.org/math/5/2/c/52c909865274b3880328b8fc4253d2a5.png" /></li>
+</ul>
+<p>Thus:</p>
+<dl>
+    <dd><img class="tex" alt="d_w = 0.944 + (3 * 0.1 (1 - 0.944)) = 0.961" src="//upload.wikimedia.org/math/9/3/5/935f1dc0ffefb4cf5d50abdfc75b9b73.png" /></dd>
+</dl>
+<p>Given the strings <img class="tex" alt="s_1" src="//upload.wikimedia.org/math/0/3/2/032e388e2ab0ba83dd40c91e1f8d9c2f.png" /> <i>DWAYNE</i> and <img class="tex" alt="s_2" src="//upload.wikimedia.org/math/3/3/6/336ac411515fbb2b61ec71e6bf2fba27.png" /> <i>DUANE</i> we find:</p>
+<ul>
+    <li><img class="tex" alt="m = 4" src="//upload.wikimedia.org/math/c/c/2/cc29e84152f151181d4813b7ea8adb81.png" /></li>
+    <li><img class="tex" alt="|s_1| = 6" src="//upload.wikimedia.org/math/8/7/b/87bf60b9b8b205e51761cab991ad5b4f.png" /></li>
+    <li><img class="tex" alt="|s_2| = 5" src="//upload.wikimedia.org/math/8/3/6/8363fde8d92a596bdbbabfcb97adf636.png" /></li>
+    <li><img class="tex" alt="t = 0" src="//upload.wikimedia.org/math/3/e/8/3e8f7b0adf6d7024b951f29a18225e4a.png" /></li>
+</ul>
+<p>We find a Jaro score of:</p>
+<dl>
+    <dd><img class="tex" alt="d_j = \frac{1}{3}\left(\frac{4}{6} + \frac{4}{5} + \frac{4-0}{4}\right) = 0.822" src="//upload.wikimedia.org/math/5/a/4/5a4b0f3bc371f0084e7de5bfcee740db.png" /></dd>
+</dl>
+<p>To find the Jaro–Winkler score using the standard weight <img class="tex" alt="p = 0.1" src="//upload.wikimedia.org/math/9/a/2/9a2620753f6201fd359ad1143f8bd7dc.png" />, we continue to find:</p>
+<ul>
+    <li><img class="tex" alt="\ell = 1" src="//upload.wikimedia.org/math/1/0/e/10e95d0fb3d7f8f2b4dd864596ee1421.png" /></li>
+</ul>
+<p>Thus:</p>
+<dl>
+    <dd><img class="tex" alt="d_w = 0.822 + (1 * 0.1 (1 - 0.822)) = 0.84" src="//upload.wikimedia.org/math/7/3/7/737a234cd9631e81663cf78edde10ecc.png" /></dd>
+</dl>
+<p>Given the strings <img class="tex" alt="s_1" src="//upload.wikimedia.org/math/0/3/2/032e388e2ab0ba83dd40c91e1f8d9c2f.png" /> <i>DIXON</i> and <img class="tex" alt="s_2" src="//upload.wikimedia.org/math/3/3/6/336ac411515fbb2b61ec71e6bf2fba27.png" /> <i>DICKSONX</i> we find:<sup class="noprint Inline-Template" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Please_clarify" title="Wikipedia:Please clarify"><span title="The text near this tag needs further explanation. (March 2013)">further explanation needed</span></a></i>]</sup></p>
+<table class="wikitable">
+    <tr>
+        <td></td>
+        <td>D</td>
+        <td>I</td>
+        <td>X</td>
+        <td>O</td>
+        <td>N</td>
+    </tr>
+    <tr>
+        <td>D</td>
+        <td><span style="background: #ffcc33">1</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>I</td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">1</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+    </tr>
+    <tr>
+        <td>C</td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+    </tr>
+    <tr>
+        <td>K</td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>0</td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+    </tr>
+    <tr>
+        <td>O</td>
+        <td>0</td>
+        <td>0</td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">1</span></td>
+        <td><span style="background: #ffcc33">0</span></td>
+    </tr>
+    <tr>
+        <td>N</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td><span style="background: #ffcc33">0</span></td>
+        <td><span style="background: #ffcc33">1</span></td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td><span style="background: #ffcc33">0</span></td>
+    </tr>
+</table>
+<ul>
+    <li><img class="tex" alt="m = 4" src="//upload.wikimedia.org/math/c/c/2/cc29e84152f151181d4813b7ea8adb81.png" /> Note that the two <i>X</i>s are not considered matches because they are outside the match window of 3.</li>
+</ul>
+<ul>
+    <li><img class="tex" alt="|s_1| = 5" src="//upload.wikimedia.org/math/3/1/9/3198818769b871cd135fa00c8e63d740.png" /></li>
+    <li><img class="tex" alt="|s_2| = 8" src="//upload.wikimedia.org/math/5/4/2/5427b0baea6967073882a4e913b6a19e.png" /></li>
+    <li><img class="tex" alt="t = 0" src="//upload.wikimedia.org/math/3/e/8/3e8f7b0adf6d7024b951f29a18225e4a.png" /></li>
+</ul>
+<p>We find a Jaro score of:</p>
+<dl>
+    <dd><img class="tex" alt="d_j = \frac{1}{3}\left(\frac{4}{5} + \frac{4}{8} + \frac{4-0}{4}\right) = 0.767" src="//upload.wikimedia.org/math/1/e/3/1e30ab56067f8abb37beffb87988b841.png" /></dd>
+</dl>
+<p>To find the Jaro–Winkler score using the standard weight <img class="tex" alt="p = 0.1" src="//upload.wikimedia.org/math/9/a/2/9a2620753f6201fd359ad1143f8bd7dc.png" />, we continue to find:</p>
+<ul>
+    <li><img class="tex" alt="\ell = 2" src="//upload.wikimedia.org/math/3/6/3/363fec1a1f325a6c230814184fea10c2.png" /></li>
+</ul>
+<p>Thus:</p>
+<dl>
+    <dd><img class="tex" alt="d_w = 0.767 + (2 * 0.1 (1 - 0.767)) = 0.813" src="//upload.wikimedia.org/math/a/6/e/a6efd55e368794fa0b9814082a5adff1.png" /></dd>
+</dl>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;action=edit&amp;section=3" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+    <li><a href="/wiki/Levenshtein_distance" title="Levenshtein distance">Levenshtein distance</a></li>
+    <li><a href="/wiki/Record_linkage" title="Record linkage">Record linkage</a></li>
+    <li><a href="/wiki/Census" title="Census">Census</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;action=edit&amp;section=4" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+    <li><span class="citation journal"><a href="/w/index.php?title=Matthew_A._Jaro&amp;action=edit&amp;redlink=1" class="new" title="Matthew A. Jaro (page does not exist)">Jaro, M. A.</a> (1989). "Advances in record linkage methodology as applied to the 1985 census of Tampa Florida". <i>Journal of the American Statistical Association</i> <b>84</b> (406): 414–20. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1080%2F01621459.1989.10478785">10.1080/01621459.1989.10478785</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AJaro%E2%80%93Winkler+distance&amp;rft.atitle=Advances+in+record+linkage+methodology+as+applied+to+the+1985+census+of+Tampa+Florida&amp;rft.au=Jaro%2C+M.+A.&amp;rft.aulast=Jaro%2C+M.+A.&amp;rft.date=1989&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1080%2F01621459.1989.10478785&amp;rft.issue=406&amp;rft.jtitle=Journal+of+the+American+Statistical+Association&amp;rft.pages=414%E2%80%9320&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=84" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+    <li><span class="citation journal">Jaro, M. A. (1995). "Probabilistic linkage of large public health data file". <i>Statistics in Medicine</i> <b>14</b> (5–7): 491–8. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1002%2Fsim.4780140510">10.1002/sim.4780140510</a>. <a href="/wiki/PubMed_Identifier" title="PubMed Identifier" class="mw-redirect">PMID</a>&#160;<a rel="nofollow" class="external text" href="//www.ncbi.nlm.nih.gov/pubmed/7792443">7792443</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AJaro%E2%80%93Winkler+distance&amp;rft.atitle=Probabilistic+linkage+of+large+public+health+data+file&amp;rft.au=Jaro%2C+M.+A.&amp;rft.aulast=Jaro%2C+M.+A.&amp;rft.date=1995&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1002%2Fsim.4780140510&amp;rft_id=info%3Apmid%2F7792443&amp;rft.issue=5%E2%80%937&amp;rft.jtitle=Statistics+in+Medicine&amp;rft.pages=491%E2%80%938&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=14" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+    <li><span class="citation journal"><a href="/w/index.php?title=William_E._Winkler&amp;action=edit&amp;redlink=1" class="new" title="William E. Winkler (page does not exist)">Winkler, W. E.</a> (1990). <a rel="nofollow" class="external text" href="http://www.amstat.org/sections/srms/Proceedings/papers/1990_056.pdf">"String Comparator Metrics and Enhanced Decision Rules in the Fellegi-Sunter Model of Record Linkage"</a>. <i>Proceedings of the Section on Survey Research Methods</i> (American Statistical Association): 354–359.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AJaro%E2%80%93Winkler+distance&amp;rft.atitle=String+Comparator+Metrics+and+Enhanced+Decision+Rules+in+the+Fellegi-Sunter+Model+of+Record+Linkage&amp;rft.aulast=Winkler%2C+W.+E.&amp;rft.au=Winkler%2C+W.+E.&amp;rft.date=1990&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.amstat.org%2Fsections%2Fsrms%2FProceedings%2Fpapers%2F1990_056.pdf&amp;rft.jtitle=Proceedings+of+the+Section+on+Survey+Research+Methods&amp;rft.pages=354%E2%80%93359&amp;rft.pub=American+Statistical+Association&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+<ul>
+    <li><span class="citation journal"><a href="/w/index.php?title=William_E._Winkler&amp;action=edit&amp;redlink=1" class="new" title="William E. Winkler (page does not exist)">Winkler, W. E.</a> (2006). <a rel="nofollow" class="external text" href="http://www.census.gov/srd/papers/pdf/rrs2006-02.pdf">"Overview of Record Linkage and Current Research Directions"</a>. <i>Research Report Series, RRS</i>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AJaro%E2%80%93Winkler+distance&amp;rft.atitle=Overview+of+Record+Linkage+and+Current+Research+Directions&amp;rft.aulast=Winkler%2C+W.+E.&amp;rft.au=Winkler%2C+W.+E.&amp;rft.date=2006&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.census.gov%2Fsrd%2Fpapers%2Fpdf%2Frrs2006-02.pdf&amp;rft.jtitle=Research+Report+Series%2C+RRS&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;action=edit&amp;section=5" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+    <li><a rel="nofollow" class="external text" href="http://web.archive.org/web/20100227020019/http://www.census.gov/geo/msb/stand/strcmp.c">strcmp.c - Original C Implementation by the author of the algorithm</a></li>
+</ul>
+
+
+<!--
+NewPP limit report
+Parsed by mw1134
+CPU time usage: 0.628 seconds
+Real time usage: 0.802 seconds
+Preprocessor visited node count: 1521/1000000
+Preprocessor generated node count: 9309/1500000
+Post‐expand include size: 25339/2048000 bytes
+Template argument size: 1766/2048000 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 6/500
+Lua time usage: 0.080s
+Lua memory usage: 1.54 MB
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:6782835-0!0!0!!en!4!* and timestamp 20131204221548
+ -->
+<noscript><img src="//en.wikipedia.org/w/index.php?title=Special:CentralAutoLogin/start&amp;type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>								<div class="printfooter">
+    Retrieved from "<a href="http://en.wikipedia.org/w/index.php?title=Jaro–Winkler_distance&amp;oldid=584590662">http://en.wikipedia.org/w/index.php?title=Jaro–Winkler_distance&amp;oldid=584590662</a>"				</div>
+<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:String_similarity_measures" title="Category:String similarity measures">String similarity measures</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Articles_that_may_contain_original_research_from_May_2013" title="Category:Articles that may contain original research from May 2013">Articles that may contain original research from May 2013</a></li><li><a href="/wiki/Category:All_articles_that_may_contain_original_research" title="Category:All articles that may contain original research">All articles that may contain original research</a></li><li><a href="/wiki/Category:Articles_with_topics_of_unclear_notability_from_May_2013" title="Category:Articles with topics of unclear notability from May 2013">Articles with topics of unclear notability from May 2013</a></li><li><a href="/wiki/Category:All_articles_with_topics_of_unclear_notability" title="Category:All articles with topics of unclear notability">All articles with topics of unclear notability</a></li><li><a href="/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></li><li><a href="/wiki/Category:Articles_with_unsourced_statements_from_January_2011" title="Category:Articles with unsourced statements from January 2011">Articles with unsourced statements from January 2011</a></li><li><a href="/wiki/Category:Wikipedia_articles_needing_clarification_from_March_2013" title="Category:Wikipedia articles needing clarification from March 2013">Wikipedia articles needing clarification from March 2013</a></li></ul></div></div>												<div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+    <h2>Navigation menu</h2>
+    <div id="mw-head">
+        <div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+            <h3 id="p-personal-label">Personal tools</h3>
+            <ul>
+                <li id="pt-createaccount"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Jaro%E2%80%93Winkler+distance&amp;type=signup">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Jaro%E2%80%93Winkler+distance" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>	</ul>
+        </div>
+        <div id="left-navigation">
+            <div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+                <h3 id="p-namespaces-label">Namespaces</h3>
+                <ul>
+                    <li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Jaro%E2%80%93Winkler_distance"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+                    <li  id="ca-talk"><span><a href="/wiki/Talk:Jaro%E2%80%93Winkler_distance"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+                </ul>
+            </div>
+            <div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+                <h3 id="mw-vector-current-variant">
+                </h3>
+                <h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+                <div class="menu">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="right-navigation">
+            <div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+                <h3 id="p-views-label">Views</h3>
+                <ul>
+                    <li id="ca-view" class="selected"><span><a href="/wiki/Jaro%E2%80%93Winkler_distance" >Read</a></span></li>
+                    <li id="ca-edit"><span><a href="/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;action=edit"  title="You can edit this page. &#10;Please review your changes before saving. [e]" accesskey="e">Edit</a></span></li>
+                    <li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+                </ul>
+            </div>
+            <div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+                <h3 id="p-cactions-label"><span>Actions</span><a href="#"></a></h3>
+                <div class="menu">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <div id="p-search" role="search">
+                <h3><label for="searchInput">Search</label></h3>
+                <form action="/w/index.php" id="searchform">
+                    <div id="simpleSearch">
+                        <input name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" />						<button type="submit" name="button" title="Search Wikipedia for this text" id="searchButton"><img src="//bits.wikimedia.org/static-1.23wmf5/skins/vector/images/search-ltr.png?303-4" alt="Search" width="12" height="13" /></button>								<input type='hidden' name="title" value="Special:Search"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="mw-panel">
+        <div id="p-logo" role="banner"><a style="background-image: url(//upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png);" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+        <div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+            <h3 id='p-navigation-label'>Navigation</h3>
+            <div class="body">
+                <ul>
+                    <li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+                    <li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+                    <li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+                    <li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+                    <li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+                    <li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+            <h3 id='p-interaction-label'>Interaction</h3>
+            <div class="body">
+                <ul>
+                    <li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+                    <li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+                    <li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+                    <li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+                    <li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+            <h3 id='p-tb-label'>Tools</h3>
+            <div class="body">
+                <ul>
+                    <li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Jaro%E2%80%93Winkler_distance" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+                    <li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Jaro%E2%80%93Winkler_distance" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+                    <li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+                    <li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+                    <li id="t-permalink"><a href="/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;oldid=584590662" title="Permanent link to this revision of the page">Permanent link</a></li>
+                    <li id="t-info"><a href="/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;action=info">Page information</a></li>
+                    <li id="t-wikibase"><a href="//www.wikidata.org/wiki/Q3030677" title="Link to connected data repository item [g]" accesskey="g">Data item</a></li>
+                    <li id="t-cite"><a href="/w/index.php?title=Special:Cite&amp;page=Jaro%E2%80%93Winkler_distance&amp;id=584590662" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+            </div>
+        </div>
+        <div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+            <h3 id='p-coll-print_export-label'>Print/export</h3>
+            <div class="body">
+                <ul>
+                    <li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Jaro%E2%80%93Winkler+distance">Create a book</a></li>
+                    <li id="coll-download-as-rl"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Jaro%E2%80%93Winkler+distance&amp;oldid=584590662&amp;writer=rl">Download as PDF</a></li>
+                    <li id="t-print"><a href="/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+            <h3 id='p-lang-label'>Languages</h3>
+            <div class="body">
+                <ul>
+                    <li class="interwiki-fr"><a href="//fr.wikipedia.org/wiki/Distance_de_Jaro-Winkler" title="Distance de Jaro-Winkler – French" lang="fr" hreflang="fr">Français</a></li>
+                    <li class="interwiki-pt"><a href="//pt.wikipedia.org/wiki/Dist%C3%A2ncia_de_Jaro-Winkler" title="Distância de Jaro-Winkler – Portuguese" lang="pt" hreflang="pt">Português</a></li>
+                    <li class="interwiki-th"><a href="//th.wikipedia.org/wiki/%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%B0%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%88%E0%B8%B2%E0%B9%82%E0%B8%A3-%E0%B8%A7%E0%B8%B4%E0%B8%87%E0%B9%80%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%A3%E0%B9%8C" title="ระยะทางจาโร-วิงเคลอร์ – Thai" lang="th" hreflang="th">ไทย</a></li>
+                    <li class="uls-p-lang-dummy"><a href="#"></a></li>
+                    <li class="wbc-editpage"><a href="//www.wikidata.org/wiki/Q3030677#sitelinks-wikipedia" title="Edit interlanguage links">Edit links</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer" role="contentinfo">
+    <ul id="footer-info">
+        <li id="footer-info-lastmod"> This page was last modified on 4 December 2013 at 22:15.<br /></li>
+        <li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+            additional terms may apply.  By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy.</a> <br/>
+            Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+    </ul>
+    <ul id="footer-places">
+        <li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+        <li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+        <li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+        <li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+        <li id="footer-places-developers"><a class="external" href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+        <li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=Jaro%E2%80%93Winkler_distance&amp;title=Jaro%E2%80%93Winkler_distance" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+    </ul>
+    <ul id="footer-icons" class="noprint">
+        <li id="footer-copyrightico">
+            <a href="//wikimediafoundation.org/"><img src="//bits.wikimedia.org/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/></a>
+        </li>
+        <li id="footer-poweredbyico">
+            <a href="//www.mediawiki.org/"><img src="//bits.wikimedia.org/static-1.23wmf5/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+        </li>
+    </ul>
+    <div style="clear:both"></div>
+</div>
+<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+    mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+    mw.loader.load(["mobile.desktop","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","mw.MwEmbedSupport.style","ext.articleFeedbackv5.startup","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","mw.PopUpMediaTransform","skins.vector.collapsibleNav"],null,true);
+}</script>
+<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<!-- Served by mw1215 in 0.171 secs. -->
+</body>
+</html>
