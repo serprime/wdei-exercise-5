@@ -18,6 +18,57 @@ import java.io.IOException;
  */
 public class TreeSimilarityTest {
 
+
+    @Test
+    public void testGood() {
+        String left = "<html>" +
+                "<h1></h1>" +
+                "  <div>" +
+                "    <div>" +
+                "      <p></p>" +
+                "      <span></span>" +
+                "    </div>" +
+                "    <div>" +
+                "      <p></p>" +
+                "      <span></span>" +
+                "    </div>" +
+                "    <div>" +
+                "      <p></p>" +
+                "      <span></span>" +
+                "    </div>" +
+                "    <div>" +
+                "      <p></p>" +
+                "      <span></span>" +
+                "    </div>" +
+                "  </div>" +
+                "</html>";
+        String right = "<html>" +
+                "<div>" +
+                "  <h1><pre></pre></h1>" +
+                "  <div>" +
+                "    <div>" +
+                "      <p></p>" +
+                "      <span></span>" +
+                "<ul><li></li><li></li><li></li><li></li></ul>" +
+                "    </div>" +
+                "    <div>" +
+                "      <p></p>" +
+                "      <span></span>" +
+                "    </div>" +
+                "    <div>" +
+                "      <p></p>" +
+                "      <span></span>" +
+                "    </div>" +
+                "    <div>" +
+                "      <p></p>" +
+                "      <span></span>" +
+                "    </div>" +
+                "  </div>" +
+                "</div>" +
+                "</html>";
+        test("demo", left, right);
+    }
+
     @Test
     public void testSimple() {
 
@@ -93,6 +144,8 @@ public class TreeSimilarityTest {
     private void test(String label, String left, String right) {
         Document leftDoc = Jsoup.parse(left);
         Document rightDoc = Jsoup.parse(right);
+//        System.out.println(leftDoc);
+//        System.out.println(rightDoc);
         System.out.println("\n\nTEST: " + label);
         System.out.println("node matches: " + new TreeSimilarity().calculate(leftDoc, rightDoc));
     }
