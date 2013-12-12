@@ -1,8 +1,8 @@
+
 package wdei.b1;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.util.IOUtils;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.xmlbeans.impl.common.Levenshtein;
@@ -36,9 +36,9 @@ public class Main {
         List<String> lines = org.apache.commons.io.FileUtils.readLines(getResourceFile(inputFile));
 
         int count = 1;
-        jaroData.put(String.valueOf(count), new Object[]{"string1", "string2", "actual same/diff", "distance",
+        jaroData.put(String.valueOf(count), new Object[]{"string1", "string2", "actual same/different", "similarity",
                 "thresh1 (> 0.75)", "thresh2 (> 0.9)"});
-        levData.put(String.valueOf(count), new Object[]{"string1", "string2", "actual same/diff", "distance",
+        levData.put(String.valueOf(count), new Object[]{"string1", "string2", "actual same/different", "distance", "similarity",
                 "thresh1 (> 0.75)", "thresh2 (> 0.9)"});
 
         double jaroDistance, levDistance;
@@ -47,8 +47,10 @@ public class Main {
         String actual = null;
 
         JaroDistance jd = new JaroDistance();
+        uk.ac.shef.wit.simmetrics.similaritymetrics.Levenshtein lev = new uk.ac.shef.wit.simmetrics.similaritymetrics.Levenshtein();
+        
 
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
         for (String line : lines) {
             count++;
             String[] strings = line.split("[|]");
@@ -63,7 +65,8 @@ public class Main {
             //calculate the jaro and levenshtein distances
             jaroDistance = jd.calculate(strings[0], strings[1]);
             levDistance = Levenshtein.distance(strings[0], strings[1]);
-
+            double levSimilarity = lev.getSimilarity(strings[0], strings[1]);
+            
             System.out.println(String.format("Jaro distance (%s, %s): %f", strings[0], strings[1], jaroDistance));
             System.out.println(String.format("Levenshtein (%s, %s): %f", strings[0], strings[1], levDistance));
             System.out.println();
@@ -71,8 +74,8 @@ public class Main {
             //determine the result of similarity in relation to the actual difference
             String jaroResult75 = determineResult(jaroDistance, thresh1, actual, "jaro75");
             String jaroResult90 = determineResult(jaroDistance, thresh2, actual, "jaro90");
-            String levResult75 = determineResult(jaroDistance, thresh1, actual, "lev75");
-            String levResult90 = determineResult(jaroDistance, thresh2, actual, "lev90");
+            String levResult75 = determineResult(levSimilarity, thresh1, actual, "lev75");
+            String levResult90 = determineResult(levSimilarity, thresh2, actual, "lev90");
 
             //put the data in a map
             jaroData.put(String.valueOf(count), new Object[]{
@@ -81,7 +84,7 @@ public class Main {
             });
 
             levData.put(String.valueOf(count), new Object[]{
-                    strings[0], strings[1], actual, levDistance,
+                    strings[0], strings[1], actual, levDistance, levSimilarity,
                     levResult75, levResult90
             });
         } //end while
@@ -168,7 +171,7 @@ public class Main {
 
         jaroData.put(String.valueOf(++count), new Object[]{"", "", "", "", "", "", "", "",
                 "TS", "FS", "FD", "TD", "precision", "recall"});
-        levData.put(String.valueOf(++count), new Object[]{"", "", "", "", "", "", "", "",
+        levData.put(String.valueOf(++count), new Object[]{"", "", "", "", "", "", "", "", "",
                 "TS", "FS", "FD", "TD", "precision", "recall"});
 
         double jaroPrecision75 = jTS75 / (double) (jTS75 + jFS75);
@@ -187,9 +190,9 @@ public class Main {
                 jTS75, jFS75, jFD75, jTD75, jaroPrecision75, jaroRecall75});
         jaroData.put(String.valueOf(++count), new Object[]{"", "", "", "", "", "", "", "",
                 jTS90, jFS90, jFD90, jTD90, jaroPrecision90, jaroRecall90});
-        levData.put(String.valueOf(++count), new Object[]{"", "", "", "", "", "", "", "",
+        levData.put(String.valueOf(++count), new Object[]{"", "", "", "", "", "", "", "", "",
                 lTS75, lFS75, lFD75, lTD75, levPrecision75, levRecall75});
-        levData.put(String.valueOf(++count), new Object[]{"", "", "", "", "", "", "", "",
+        levData.put(String.valueOf(++count), new Object[]{"", "", "", "", "", "", "", "", "",
                 lTS90, lFS90, lFD90, lTD90, levPrecision90, levRecall90});
     }
 
